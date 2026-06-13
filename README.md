@@ -1,9 +1,8 @@
 # HFSS On-Chip Spiral Inductors
 
 This repository contains the design, simulation and analysis of on-chip spiral inductors using **Ansys HFSS**.
-The project was developed for the course **Telecommunication Electronics**.
 
-The main objective is to model different inductor geometries, extract their electromagnetic behavior through S-parameters and compare their performance using the quality factor `Q`.
+The project was developed for the course **Telecommunication Electronics** and focuses on the electromagnetic simulation of different inductor geometries, S-parameter extraction and quality factor comparison.
 
 ## Project Overview
 
@@ -25,11 +24,11 @@ Outer diameter: D = 170 μm
 Metal width: w = 11 μm
 Spacing: s = 2 μm
 Substrate material: Silicon
-Insulating layer: SiO₂
+Insulating layer: SiO2
 Metal material: Copper
 ```
 
-For the 2.5-turn square spiral inductor, the model also includes:
+For the 2.5-turn square spiral inductor, the HFSS model also includes:
 
 * Metal 9 spiral inductor
 * Metal 8 underpass
@@ -74,37 +73,35 @@ The following quantities are extracted from the HFSS simulation results:
 
 The impedance is calculated from the admittance parameter:
 
-```math
+$$
 Z = \frac{1}{Y_{11}}
-```
+$$
 
 The extracted values are then computed as:
 
-```math
-L = \frac{\operatorname{Im}(Z)}{2 \pi f}
-```
+$$
+L = \frac{\mathrm{Im}(Z)}{2 \pi f}
+$$
 
-```math
-R = \operatorname{Re}(Z)
-```
+$$
+R = \mathrm{Re}(Z)
+$$
 
-```math
-Q = \frac{\operatorname{Im}(Z)}{\operatorname{Re}(Z)}
-```
+$$
+Q = \frac{\mathrm{Im}(Z)}{\mathrm{Re}(Z)}
+$$
 
 ## MATLAB Post-Processing
 
 MATLAB is used to process the exported HFSS data and create common comparison plots.
 
-The quality factor of the different inductor geometries is plotted on the same graph in order to compare their RF performance.
+The quality factor curves of the different inductor geometries are plotted on the same graph in order to compare their RF performance.
 
 ## Results Summary
 
 The simulation results show that the quality factor generally increases with frequency for the examined structures.
 
-The comparison between the geometries shows that the inductor shape affects the quality factor.
-The circular inductor provides smoother current distribution because it has no sharp corners.
-The octagonal inductor behaves as an intermediate solution, while the square inductor is more affected by its sharp corners.
+The comparison between the geometries shows that the inductor shape affects the quality factor. The circular inductor provides smoother current distribution because it has no sharp corners. The octagonal inductor behaves as an intermediate solution, while the square inductor is more affected by its sharp corners.
 
 Overall, the results confirm that geometry plays an important role in the RF behavior and efficiency of on-chip spiral inductors.
 
